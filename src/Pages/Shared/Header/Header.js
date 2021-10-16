@@ -1,11 +1,12 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Col, Container, Image, Nav, Navbar, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../../hooks/useAuth';
+import './Header.css';
 
 const Header = () => {
-    const { user, logOut } = useAuth()
+    const { user, logOut } = useAuth();
     return (
         <>
             <Navbar bg="dark" variant="dark" sticky="top" collapseOnSelect expand="lg">
@@ -22,9 +23,14 @@ const Header = () => {
                                 :
                                 <Nav.Link as={Link} to="/login">Login</Nav.Link>}
                         </Nav>
-                        <Navbar.Text>
+                        {/* <Navbar.Text>
                             Signed in as: <a href="#login">{user?.displayName}</a>
-                        </Navbar.Text>
+                        </Navbar.Text> */}
+                        <Row>
+                        <Col xs={0} md={0} lg={0} width={2} >
+                            <Image className="header-image" src={user?.photoURL} roundedCircle />
+                        </Col>
+                        </Row>
                     </Navbar.Collapse>
 
 
