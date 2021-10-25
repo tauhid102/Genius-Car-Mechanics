@@ -43,7 +43,6 @@ const useFirebase = () => {
             setLoading(false)
         });
     }
-    console.log(user)
     return {
         user,
         isLoading,

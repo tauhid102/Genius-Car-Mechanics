@@ -18,8 +18,9 @@ const Header = () => {
                             <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
                             <Nav.Link as={HashLink} to="/home#services">Services</Nav.Link>
                             <Nav.Link as={HashLink} to="/home#experts">Expert</Nav.Link>
+                            <Nav.Link as={Link} to="/addService">Add Service</Nav.Link>
                             {user.email ?
-                                <button onClick={logOut}>Logout</button>
+                                <button className="btn btn-dark" onClick={logOut}>Logout</button>
                                 :
                                 <Nav.Link as={Link} to="/login">Login</Nav.Link>}
                         </Nav>
@@ -28,7 +29,7 @@ const Header = () => {
                         </Navbar.Text> */}
                         <Row>
                         <Col xs={0} md={0} lg={0} width={2} >
-                            <Image className="header-image" src={user?.photoURL} roundedCircle />
+                            <Image className="header-image ms-2" src={user?.photoURL} roundedCircle />
                         </Col>
                         </Row>
                     </Navbar.Collapse>
